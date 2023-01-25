@@ -1,11 +1,10 @@
 # MonitoringCPAnsible
 
-Repo to show case monitoring of CP platform deployed via cp-ansible
+Repo to show case monitoring of CP platform deployed via cp-ansible.    
+Users should be able to pull JMX from the cluster using the following ports:  `9090/3000`.  
 
-Users should be able to pull JMX from the cluster using the following ports: 
-
-Supports metrics aggregation using JMX/Jolokia.
-Supports aggregated metrics export to Prometheus.
+Supports metrics aggregation using JMX/Jolokia.  
+Supports aggregated metrics export to Prometheus.  
 
 
 ## Jolokia 
