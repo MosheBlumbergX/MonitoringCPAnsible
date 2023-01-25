@@ -1,0 +1,12 @@
+alertmanager:
+  persistentVolume:
+    enabled: false
+server:
+ retention: "2d"
+ persistentVolume:
+   enabled: true
+ persistentVolume:
+   size: 100Gi
+prometheusSpec:
+    externalUrl: http://localhost:9090/prometheus
+
