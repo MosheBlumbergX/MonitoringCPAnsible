@@ -1,7 +1,0 @@
-# grafana.ini:
-#   server:
-#     root_url: http://localhost:3000/grafana
-persistence:
-  enabled: true
-  size: 10Gi
-

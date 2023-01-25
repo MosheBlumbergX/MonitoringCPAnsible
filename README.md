@@ -14,9 +14,6 @@ Supports aggregated metrics export to Prometheus.
 
 Since the Jolokia run in agent mode on Kafka's class path, it will connect to Kafka monitoring MBeans and will provide metrics on HTTP interface.
 
-# How to deploy prometheus and grafana
-
-I had to change some of the default values in the [source](https://github.com/confluentinc/confluent-operator/tree/master/test/soak#deploy-confluent-operator-cluster-scope) to make the dashboards work with my minikube. In here I outline the steps and give json file for the dashboard. 
 
 ## Prometheus
 
@@ -40,4 +37,51 @@ There are two core pieces in this diagram:
 When you have metrics data streaming into the Prometheus server, we can start dashboarding our metrics. The tool of choice in our stack is Grafana. Conceptually, here's how the process will look once we have connected Grafana to Prometheus:
 
 ![alt text](images/grafana-to-prometheus-e1616975067603-1024x556.png)
+
+
+## CP-ansible
+
+With [cp-ansible](https://docs.confluent.io/ansible/current/overview.html) you can with 2 properties enabled jolokia and Prometheus agents. 
+
+```
+  vars:
+    ansible_connection: ssh
+    ansible_user: ec2-user 
+    ansible_become: true
+    ansible_ssh_private_key_file: key.pem
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+    jmxexporter_enabled: true
+    jolokia_enabled: true
+```
+
+
+### Enable JMX Exporter
+
+JMX Exporter is disabled by default. When enabled, the JMX Exporter jar is pulled from the internet and enabled on all Confluent Platform components besides Confluent Control Center.
+
+#### Enable JMX Exporter in hosts.yml as below:
+
+```
+all:
+  vars:
+    jmxexporter_enabled: true
+```
+
+### Enable Jolokia
+
+Jolokia monitoring is disabled by default for Confluent Platform components when installed by Ansible Playbooks for Confluent Platform.
+
+#### Enable Jolokia in hosts.yml as shown below:
+
+```
+all:
+  vars:
+    jolokia_enabled: true
+```
+
+
+## Reference 
+
+[Confluent Blog](https://www.confluent.io/blog/monitor-kafka-clusters-with-prometheus-grafana-and-confluent/?_ga=2.28670844.1574239109.1674464926-1092077398.1613042839)
 
