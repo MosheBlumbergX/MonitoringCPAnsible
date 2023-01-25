@@ -88,4 +88,3 @@ Deploy CP grafana dashboard
 
 Great article to read about [monitor-kafka-clusters-with-prometheus-grafana-and-confluent](https://www.confluent.io/blog/monitor-kafka-clusters-with-prometheus-grafana-and-confluent)
 
-[Link to source](https://github.com/confluentinc/confluent-operator/tree/master/test/soak#deploy-confluent-operator-cluster-scope)
