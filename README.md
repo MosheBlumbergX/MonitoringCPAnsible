@@ -83,5 +83,6 @@ all:
 
 ## Reference 
 
+[Confluent Docs](https://docs.confluent.io/ansible/current/ansible-configure.html#enable-jmx-exporter)
 [Confluent Blog](https://www.confluent.io/blog/monitor-kafka-clusters-with-prometheus-grafana-and-confluent/?_ga=2.28670844.1574239109.1674464926-1092077398.1613042839)
 
