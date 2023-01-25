@@ -128,7 +128,15 @@ sudo systemctl enable grafana-server
 Grafana should now serve on port 3000, for example:  `http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:3000`
 
 
+## Add dashboards, or create 
 
+Add data source in Grafana UI: Prometheus  
+Add following HTTP URL and make sure to save and test (replace dns with yours): `http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:9090`  
+The new page will have a URL with a UID in it: http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:3000/datasources/edit/RxmrY5HVz copy the UID (for example `RxmrY5HVz`)   
+Change the datasource UID in the provided file cp-grafana.json  
+Replace "uid": "RxmrY5HVz" with your own, the new UID from before  
+Deploy CP grafana dashboard  
+    Import dashboard for CP: example-confluent-platform.json
 
 
 ## Reference 
