@@ -94,9 +94,7 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
 
-Check server IP on port 9090 , and targets, like this: 
-
-http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:9090/targets?search=
+Check server IP on port 9090 , and targets, like this: `http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:9090/targets?search=`
 
 
 ## Grafana 
@@ -127,9 +125,7 @@ sudo systemctl status grafana-server
 sudo systemctl enable grafana-server
 ```
 
-Grafana should now serve on port 3000, for example:  
-
-http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:3000
+Grafana should now serve on port 3000, for example:  `http://ec2-18-169-53-36.eu-west-2.compute.amazonaws.com:3000`
 
 
 
