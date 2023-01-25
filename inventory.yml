@@ -1,0 +1,58 @@
+all:
+  hosts:
+    ip-192-168-11-244.eu-west-2.compute.internal:
+        ansible_host: ec2-18-170-26-124.eu-west-2.compute.amazonaws.com
+    ip-192-168-5-25.eu-west-2.compute.internal:
+        ansible_host: ec2-13-40-155-33.eu-west-2.compute.amazonaws.com
+    ip-192-168-8-96.eu-west-2.compute.internal:
+        ansible_host: ec2-18-134-130-138.eu-west-2.compute.amazonaws.com
+    ip-192-168-4-72.eu-west-2.compute.internal:
+        ansible_host: ec2-13-40-110-49.eu-west-2.compute.amazonaws.com
+    ip-192-168-6-107.eu-west-2.compute.internal:
+        ansible_host: ec2-13-40-160-42.eu-west-2.compute.amazonaws.com
+    ip-192-168-7-245.eu-west-2.compute.internal:
+        ansible_host: ec2-18-132-200-65.eu-west-2.compute.amazonaws.com
+
+
+  vars:
+    ansible_connection: ssh
+    ansible_user: ec2-user 
+    ansible_become: true
+    ansible_ssh_private_key_file: /path/to/keyforme.pem 
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+    jmxexporter_enabled: true
+    jolokia_enabled: true
+
+zookeeper:
+  hosts:
+    ip-192-168-4-72.eu-west-2.compute.internal:
+    ip-192-168-6-107.eu-west-2.compute.internal:
+    ip-192-168-7-245.eu-west-2.compute.internal:
+
+kafka_broker:
+  hosts:
+    ip-192-168-11-244.eu-west-2.compute.internal:
+        broker_id: 100
+    ip-192-168-5-25.eu-west-2.compute.internal:
+        broker_id: 101
+    ip-192-168-8-96.eu-west-2.compute.internal:
+        broker_id: 102
+
+
+kafka_connect:
+  hosts:
+
+control_center:
+  hosts:
+
+schema_registry:
+  hosts:
+
+kafka_rest:
+  hosts:
+
+ksql:
+  hosts:
+
+

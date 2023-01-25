@@ -114,6 +114,10 @@ all:
   vars:
     jolokia_enabled: true
 ```
+## Install Confluent Platform 
+
+Follow this [guide](install-with-cp-ansible.md)  
+
 
 ## Check if it's working 
 
