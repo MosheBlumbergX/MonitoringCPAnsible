@@ -28,7 +28,7 @@ When you have metrics data streaming into the Prometheus server, we can start da
 ![alt text](images/grafana-to-prometheus-e1616975067603-1024x556.png)
 
 
-## Commands To Deploy
+## Commands To Deploy K8S
 
 Make sure to run following commands 
 - `helm repo add stable https://charts.helm.sh/stable`
